@@ -5,6 +5,7 @@ const app = express();
 const PORT = 3000;
 const userRouter = require("./routes/user");
 
+// app.use(mylogger);
 // app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.get("/", (req, res) => {
@@ -28,4 +29,5 @@ app.get("/user/info", (req, res) => {
 app.use("/user", userRouter);
 // app.use("/auth", authRouter);
 // app.use("/customer", customerRouter);
+
 app.listen(PORT, () => console.log("サーバー起動"));
