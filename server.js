@@ -3,6 +3,7 @@ console.log("node.js");
 const express = require("express");
 const app = express();
 const PORT = 3000;
+const userRouter = require("./routes/user");
 
 app.get("/", (req, res) => {
   //   console.log("hello express");
@@ -18,4 +19,10 @@ app.get("/user", (req, res) => {
 app.get("/user/info", (req, res) => {
   res.send("ユーザー情報です");
 });
+
+// ルーティング
+
+app.use("/user", userRouter);
+// app.use("/auth", authRouter);
+// app.use("/customer", customerRouter);
 app.listen(PORT, () => console.log("サーバー起動"));
