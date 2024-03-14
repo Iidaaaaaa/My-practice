@@ -9,6 +9,7 @@ app.get("/", (req, res) => {
   //   res.send("<h1>こんにちは</h1>");
   //   res.sendStatus(401);
   //   res.status(500).send("エラーです");
+  res.status(500).json({ msg: "エラーです" });
 });
 
 app.listen(PORT, () => console.log("サーバー起動"));
