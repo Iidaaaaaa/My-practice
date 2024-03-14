@@ -12,4 +12,10 @@ app.get("/", (req, res) => {
   res.status(500).json({ msg: "エラーです" });
 });
 
+app.get("/user", (req, res) => {
+  res.send("ユーザーです");
+});
+app.get("/user/info", (req, res) => {
+  res.send("ユーザー情報です");
+});
 app.listen(PORT, () => console.log("サーバー起動"));
